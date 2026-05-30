@@ -6,6 +6,10 @@
     border: 1px solid black;
 }
 
+body{
+    background: linear-gradient(to left , #c51212,rgb(214, 17, 208));
+}
+
 /* Container */
 .container {
     margin-top: 100px;
@@ -56,12 +60,14 @@ button:hover {
     background-color: red;
     color: white;
     transform: scale(1.1);
+    box-shadow: 0 0 10px blue;
 }
 
 /* Card hover */
 .card:hover {
     transform: scale(1.05);
     transition: 0.3s;
+    box-shadow: 0 0 10px red;
 }
 
 .title:hover{
