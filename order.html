@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Order</title>
 
-    <!-- CSS connect pannura line -->
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-
-    <h1 class="title">FOOD ORDER</h1>
+    <h1 class="title" style="text-align: center;">WELCOME TO OUR RESTUARANT</h1>
 
     <div class="container" style="gap: 10px;">
 
@@ -39,6 +37,35 @@
         </div>
 
     </div>
+    <script>
 
+    const buttons = document.querySelectorAll(".card button");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function(){
+
+            const foodName =
+                this.parentElement.querySelector("h3").innerText;
+
+            let orders =
+                JSON.parse(localStorage.getItem("orders")) || [];
+
+            orders.push({
+                food: foodName,
+                time: new Date().toLocaleString()
+            });
+
+            localStorage.setItem(
+                "orders",
+                JSON.stringify(orders)
+            );
+
+            alert(foodName + " Ordered Successfully!");
+        });
+
+    });
+
+    </script>
 </body>
 </html>
