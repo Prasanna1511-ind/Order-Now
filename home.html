@@ -6,13 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 </head>
+
 <style>
+    /* Heading Tag */
+    h1 {
+        font-size: 70px;
+        font-weight: 400;
+        -webkit-text-stroke: 3px black;
+        color:transparent;
+        position:relative;
+        cursor: pointer;
+    }
+
+    h1::before{
+        content: "WELCOME TO OUR RESTUARANT";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        color:black;
+        border-right: 0px solid black;
+        overflow: hidden;
+        transition: width 2s;
+    }
+
+    
+    h1:hover::before{
+        width:100%;
+        border-right: 2px solid;
+    }
+
     /* Body and Font */
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background-color: #fffefe;
+        background:linear-gradient(to left, rgb(228, 9, 9) , rgb(93, 20, 154));
         margin: 0px;
         padding: 0px;
+        box-sizing: border-box;
+        min-height: 100vh;
     }
 
     /* icons */
@@ -73,15 +103,17 @@
         right: 10px;
         list-style: none;
         background: rgb(196, 188, 188);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         border: 1px solid black;
         padding: 10px;
         margin: 0;
+        min-width: 150px;
         cursor: pointer;
-        transition: 5s;
     }
 
     .menu li {
-        padding: 8px;
+        cursor: pointer;
+        padding: 10px;
     }
 
     a:hover {
@@ -90,10 +122,10 @@
     }
 
     .menu li:hover {
-        background-color: black;
+        background: black;
         color: white;
-        transition: 1s;
-        border-radius: 10px;
+        border-radius: 8px;
+        transition: 0.5s;
     }
 
     /* Show menu when hovering */
@@ -102,14 +134,49 @@
     .menu:hover {
         display: block;
     }
+
+    /* Text's Heading */
+
+    .heading {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+    /* Mobile */
+
+        @media(max-width:768px) {
+            .contain {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+
+            .text p {
+                font-size: 16px;
+            }
+        }
+
+    /* IMAGE DIVISION */
+
+    .para1 img {
+        width: 500px;
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        transition: transform 0.5s;
+    }
 </style>
 
 <body>
 
-    <h1 class="title" style="text-align: center;">WELCOME TO OUR RESTUARANT</h1>
+    <h1 class="title">WELCOME TO OUR RESTUARANT</h1>
 
     <div class="navbar">
         <span class="menu-icon">☰</span>
+
         <ul class="menu">
             <li>Home</li>
             <li>About Us</li>
@@ -118,30 +185,36 @@
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="history.html">History</a></li>
         </ul>
-    </div>
+
     </div>
 
     <div class="contain">
 
-        <div>
-            <span style="font-weight: bold; font-size: large;">About the Restaurant</span> <br><br>
-            <p>A restaurant is a business that prepares and serves food and beverages to customers.[1] Meals are
-                generally served and eaten on the premises, but many restaurants also offer take-out and food delivery
-                services.
-                Restaurants vary greatly in appearance and offerings, featuring a wide variety of cuisines and service
-                models — ranging from inexpensive fast-food restaurants and cafeterias to mid-priced family restaurants
-                to high-priced luxury establishments.
+        <div style="flex: 1;">
+            <span class="heading">About the Restaurant</span> <br><br>
+            <p>
+                A restaurant is a business that prepares and serves food and beverages to customers.
+                Meals are generally served and eaten on the premises, but many restaurants also offer
+                take-out and food delivery services.
+
+                Restaurants vary greatly in appearance and offerings, featuring a wide variety of
+                cuisines and service models — ranging from inexpensive fast-food restaurants and
+                cafeterias to mid-priced family restaurants to high-priced luxury establishments.
+
                 <br><br>
-                <span style="font-weight: bold; font-size: large;">Etymology</span> <br><br>
-                The word derives from the early 19th century, taken from the French word restaurer 'provide meat for',
-                literally 'restore to a former state'[2] and, being the present participle of the verb,
-                [3] the term restaurant may have been used in 1507 as a "restorative beverage", and in correspondence in
-                1521 to mean 'that which restores the strength, a fortifying food or remedy'.[4]
+
+                <span class="heading">Etymology</span>
+
+                <br><br>
+
+                The word derives from the early 19th century, taken from the French word restaurer
+                meaning "provide meat for" or "restore to a former state". The term restaurant has
+                long been associated with food that restores strength and provides nourishment.
             </p>
         </div>
 
-        <div class="para1" width="500px" style="background-color: red;padding: 20px;">
-            <img src="C:\Users\Dell\OneDrive\Project\order now\resturant" alt="resturant" style="border-radius: 20px;">
+        <div class="para1">
+            <img src="C:\Users\Dell\OneDrive\Project\order now\resturant" alt="resturant">
         </div>
 
     </div>
