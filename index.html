@@ -14,26 +14,61 @@
 <div class="container">
     <div class="left"></div>
 
-    <div class="right">
+    <div class="right1">
         <h2>🍔 Food Login</h2>
         <input type="text" id="a" placeholder="username">
-        <input type="password" placeholder="Password">
+        <input type="password" id="pass" placeholder="Password">
         <button onclick="login()">Login</button>
-        <p>Don't have account? <span>Sign Up</span></p>
+        <p onclick="changePage()">Don't have account? <span>Sign Up</span></p>
+    </div>
+
+    <div class="right2" style="display: none;">
+        <h2>🍔 Food SignUp</h2>
+        <input type="text" id="S" placeholder="username">
+        <input type="password" id="pw" placeholder="Password">
+        <button onclick="SignUp()">SignUp</button>
+        <p onclick="changePage()">Do have account? <span>Login</span></p>
     </div>
 </div>
 
 <script>
+
+    function changePage() {
+        const loginDiv = document.querySelector(".right1");
+        const signupDiv = document.querySelector(".right2");
+
+        if (loginDiv.style.display !== "none") {
+            loginDiv.style.display = "none";
+            signupDiv.style.display = "block";
+        } else {
+            loginDiv.style.display = "block";
+            signupDiv.style.display = "none";
+        }    
+    }         
+
     function login() {
 
-    let us = document.getElementById("a").value;
+        let us = document.getElementById("a").value;
+        let pass = document.getElementById("pass").value;
 
-    if (us.trim() !== "") {
-        window.location.href = "home.html";
-    } else {
-        alert("username not given");
+        if (us.trim() !== "" && pass.trim() !== "") {
+            window.location.href = "home.html";
+        } else {
+            alert("Your UserName And Password Is Not Given");
+        }
     }
-}
+
+    function SignUp() {
+
+        let us = document.getElementById("S").value;
+        let pw = document.getElementById("pw").value;
+
+        if (us.trim() !== "" && pw.trim() !== "") {
+            window.location.href = "home.html";
+        } else {
+            alert("First Enter Your UserName And Password");
+        }
+    }
 </script> <!-- JS connect -->
 </body>
 </html>
