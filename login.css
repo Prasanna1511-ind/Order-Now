@@ -35,19 +35,79 @@ h1:hover {
 
 /* Left side */
 .left {
-    width: 50%;
-    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Right side */
-.right {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Right1 side */
+.right1 {
     width: 50%;
     padding: 40px;
     text-align: center;
 }
 
-.right h2 {
+.right1 h2 {
+    margin-bottom: 20px;
+    color: #ff5e62;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #ff5e62;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff9966;
+}
+
+p {
+    margin-top: 15px;
+}
+
+span {
+    color: #ff5e62;
+    cursor: pointer;
+}
+
+/* Right1 side */
+.right2 {
+    width: 50%;
+    padding: 40px;
+    text-align: center;
+}
+
+.right2 h2 {
     margin-bottom: 20px;
     color: #ff5e62;
 }
